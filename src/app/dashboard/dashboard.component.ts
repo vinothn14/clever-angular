@@ -1,5 +1,4 @@
-import {CdkTextareaAutosize} from '@angular/cdk/text-field';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,19 +6,27 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  icon: boolean = false;
-  cdkTextareaAutosize = '16px'
-  autosize = true
-
-  // @ViewChild('autosize') : CdkTextareaAutosize;
+  getTask = '';
+  inputText = ''
+  subtaskArr = [
+    'Keep my mentality healthy by taking walks outside',
+    'Build some new components in Figma',
+    'Figure out how to use Clever from the help center!',
+    'Create wireframes for the new dashboard'
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  click(){
-    this.icon = !this.icon;
+  getTaskText() {
+    this.subtaskArr.push(this.getTask);
+    this.getTask = '';
+  }
+
+  cancelTaskText() {
+    this.getTask = ''
   }
 
 }

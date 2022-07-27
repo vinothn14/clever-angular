@@ -27,14 +27,40 @@
                     </mat-expansion-panel>
                 </mat-nav-list>
             </mat-drawer>
-            <div>
+            <div style="background: #f5f9fc;">
                 <div>
-                    <span class="round">
-                        <input type="checkbox" checked id="checkbox" />
-                        <label for="checkbox"></label>
-                    </span>
-                    <span>Keep my mentality healthy by walks outside</span>
+
                 </div>
+                <input class="inputTask" type="text" placeholder="Enter your task name..."><br>
+                <mat-form-field appearance="outline" style="width: 60%;">
+                    <textarea class="textArea" rows="5" cols="50" matInput placeholder="Enter description"></textarea>
+                    <mat-divider></mat-divider>
+                    <span class="markdownStyle">
+                        <span>
+                            Markdown formatting
+                        </span>
+                        <span>
+                            <mat-icon>photo_library</mat-icon>
+                            <mat-icon>sentiment_satisfied</mat-icon>
+                            <mat-icon>attach_file</mat-icon>
+                        </span>
+                    </span>
+                </mat-form-field>
+                <h4>Subtasks</h4>
+                <ng-container *ngFor="let sub of subtaskArr">
+                    <input class="checkbox-round" type="checkbox" id="cbox2" value="second_checkbox"><label for="cbox2">{{sub}}</label><br>
+                </ng-container>
+                <mat-form-field appearance="outline" style="width: 60%; margin: 0;">
+                <input matInput [(ngModel)]="getTask" placeholder="Add another subtask">
+                </mat-form-field><br>
+                <button mat-button (click)="cancelTaskText()">Cancel</button>
+                <button mat-button style="color: green;" (click)="getTaskText()">Save task</button>
+                <div style="width: 60%;">
+                    <app-attach-img></app-attach-img>
+                </div>
+                <mat-card>
+
+                </mat-card>
             </div>
         </mat-drawer-container>
     </mat-card>
