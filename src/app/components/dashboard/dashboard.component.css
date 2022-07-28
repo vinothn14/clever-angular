@@ -7,10 +7,25 @@
     align-items: center;
 }
 
+.mat-drawer-container{
+  border-style: inherit;
+  height: -webkit-fill-available;
+  border-radius: 20px;
+}
+
 .mat-card {
     width: 92%;
     height: 90%;
     border-radius: 20px;
+    background-color: #f5f9fc;
+    padding: 2px;
+}
+
+.drawer{
+  margin:0;
+  height:100%;
+  width: 240px;
+  padding: 20px;
 }
 
 .checkbox-round {
@@ -34,13 +49,19 @@
     color:black;
     text-decoration: line-through;
   }
-
-.textArea {
+.textMatForm{
   border-radius: 18px;
   background-color: white;
   resize: none;
   outline: none;
   padding: 20px;
+}
+
+.textArea {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
 }
 
 .markdownStyle{

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,18 +16,32 @@ export class DashboardComponent implements OnInit {
     'Create wireframes for the new dashboard'
   ]
 
-  constructor() { }
+  taskForm = this.formBuilder.group({
+    taskName: '',
+    description: '',
+    subtasks: [[]]
+  });
+
+  constructor(
+    public formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
   }
 
   getTaskText() {
     this.subtaskArr.push(this.getTask);
+    this.taskForm.get('subtasks')?.patchValue(this.subtaskArr);
     this.getTask = '';
   }
 
   cancelTaskText() {
     this.getTask = ''
+  }
+
+  submitForm() {
+    console.log('chk', this.taskForm.value);
+    console.log('val', this.taskForm.get('subtasks'))
   }
 
 }

@@ -1,0 +1,11 @@
+<div class="root-element">
+    <mat-card>
+        <h3>Entered Task Name</h3>
+        <p>Entered Description</p>
+        <h4>Subtasks</h4>
+        <ng-container *ngFor="let sub of taskService.subtaskArr">
+            <input class="checkbox-round" type="checkbox" id="cbox2" value="second_checkbox"><label for="cbox2">{{sub}}</label><br>
+        </ng-container>
+
+    </mat-card>
+</div>

@@ -1,0 +1,39 @@
+.root-element {
+    background: #a7b7d4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-card {
+    width: 92%;
+    height: 90%;
+    border-radius: 20px;
+    background-color: #f5f9fc;
+    padding: 2px;
+}
+
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .checkbox-round:checked {
+    background-color: blue;
+  }
+    
+    input[type=checkbox]:checked + label {
+      color:black;
+      text-decoration: line-through;
+    }
+    

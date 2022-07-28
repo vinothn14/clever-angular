@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-attach-img',
@@ -8,7 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AttachImgComponent implements OnInit {
   files: any[] = [];
 
-  constructor() { }
+  constructor(
+    public taskService: TaskService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -63,6 +66,8 @@ export class AttachImgComponent implements OnInit {
     for (const item of files) {
       item.progress = 0;
       this.files.push(item);
+      console.log('img file', this.files);
+      this.taskService.imageList.next(this.files);
     }
     this.uploadFilesSimulator(0);
   }

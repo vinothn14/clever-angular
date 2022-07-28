@@ -1,7 +1,7 @@
 <div class="root-element">
     <mat-card>
-        <mat-drawer-container style="height: 100%">
-            <mat-drawer #sidenav mode="side" opened="true" [class.mat-elevation-z4]="true" style="width: 240px">
+        <mat-drawer-container >
+            <mat-drawer #sidenav mode="side" opened="true" [class.mat-elevation-z4]="true" style="width: 240px" border-left="none">
                 <mat-nav-list dense>
                     <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
                         <mat-expansion-panel-header>Projects</mat-expansion-panel-header>
@@ -27,13 +27,21 @@
                     </mat-expansion-panel>
                 </mat-nav-list>
             </mat-drawer>
-            <div style="background: #f5f9fc;">
-                <div>
-
+            <div style="background: #f5f9fc; padding-left: 20px;">
+                <form [formGroup]="taskForm">
+                <div style="padding: initial; padding-top: 0px; background-color: #FFFFFF; border-style: inherit;">                            
+                    <button mat-button style="padding: 10px; padding-bottom: 10px; background: transparent; font-size: 30px; border-right-style: inset;">                                        
+                        &times;
+                    </button>
+                    <h4 style="display:inline ;">Create a new task</h4>
+                    <button mat-flat-button>Save and create another</button>
+                    <button mat-flat-button color="accent" (click)="submitForm()">Save</button>
                 </div>
-                <input class="inputTask" type="text" placeholder="Enter your task name..."><br>
+                <br><br>
+                <input class="inputTask" formControlName="taskName" type="text" placeholder="Enter your task name..."><br>
                 <mat-form-field appearance="outline" style="width: 60%;">
-                    <textarea class="textArea" rows="5" cols="50" matInput placeholder="Enter description"></textarea>
+                <!-- <span style="width: 60%;"> -->
+                    <textarea formControlName="description" class="textArea" rows="5" cols="50" matInput placeholder="Enter description"></textarea>
                     <mat-divider></mat-divider>
                     <span class="markdownStyle">
                         <span>
@@ -45,22 +53,21 @@
                             <mat-icon>attach_file</mat-icon>
                         </span>
                     </span>
+                <!-- </span> -->
                 </mat-form-field>
                 <h4>Subtasks</h4>
                 <ng-container *ngFor="let sub of subtaskArr">
                     <input class="checkbox-round" type="checkbox" id="cbox2" value="second_checkbox"><label for="cbox2">{{sub}}</label><br>
                 </ng-container>
                 <mat-form-field appearance="outline" style="width: 60%; margin: 0;">
-                <input matInput [(ngModel)]="getTask" placeholder="Add another subtask">
+                <input matInput [(ngModel)]="getTask" [ngModelOptions]="{standalone: true}" placeholder="Add another subtask">
                 </mat-form-field><br>
                 <button mat-button (click)="cancelTaskText()">Cancel</button>
                 <button mat-button style="color: green;" (click)="getTaskText()">Save task</button>
                 <div style="width: 60%;">
                     <app-attach-img></app-attach-img>
                 </div>
-                <mat-card>
-
-                </mat-card>
+                </form>
             </div>
         </mat-drawer-container>
     </mat-card>
