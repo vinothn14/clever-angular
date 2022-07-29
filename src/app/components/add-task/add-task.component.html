@@ -1,27 +1,20 @@
 <form [formGroup]="taskForm">
-    <div style="padding: initial; padding-top: 0px; background-color: #FFFFFF; border-style: inherit;">                            
-        <button mat-button style="padding: 10px; padding-bottom: 10px; background: transparent; font-size: 30px; border-right-style: inset;">                                        
-            &times;
-        </button>
-        <button mat-flat-button style="display:inline;" (click)="createNewTaskForm()">Create a new task</button>
-        <button mat-flat-button type="submit" (click)="saveAndCreateForm()">Save and create another</button>
-        <button mat-flat-button color="accent" type="submit" (click)="saveAndRedirect()">Save</button>
+    <div style="display: flex; justify-content: space-between; align-items: center; background-color: #FFFFFF;">
+        <span>                          
+            <button mat-button style="padding: 10px; padding-bottom: 10px; background: transparent; font-size: 30px; border-right-style: inset;">                                        
+                &times;
+            </button>
+            <button mat-flat-button (click)="createNewTaskForm()">Create a new task</button>
+        </span>
+        <span>
+            <button mat-raised-button type="submit" (click)="saveAndCreateForm()">Save and create another</button>&nbsp;
+            <button mat-raised-button style="color: blue;" type="submit" (click)="saveAndRedirect()">Save</button>
+        </span>
     </div>
     <br><br>
     <input class="inputTask" formControlName="taskName" type="text" placeholder="Enter your task name..."><br>
     <mat-form-field appearance="outline" style="width: 60%;">
         <textarea formControlName="description" class="textArea" rows="5" cols="50" matInput placeholder="Enter description"></textarea>
-        <mat-divider></mat-divider>
-        <span class="markdownStyle">
-            <span>
-                Markdown formatting
-            </span>
-            <span>
-                <mat-icon>photo_library</mat-icon>
-                <mat-icon>sentiment_satisfied</mat-icon>
-                <mat-icon>attach_file</mat-icon>
-            </span>
-        </span>
     </mat-form-field>
     <h4>Subtasks</h4>
     <ng-container *ngFor="let sub of subtaskArr">

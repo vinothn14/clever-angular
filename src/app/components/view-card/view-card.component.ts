@@ -8,6 +8,7 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class ViewCardComponent implements OnInit {
   viewImageList: any = {};
+  taskList: any[] = [];
 
   constructor(
     public taskService: TaskService

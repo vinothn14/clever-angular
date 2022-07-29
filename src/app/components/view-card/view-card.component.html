@@ -1,7 +1,14 @@
-
-<h3>{{viewImageList.taskName}}</h3>
-<p>{{viewImageList.description}}</p>
-<h4>Subtasks</h4>
-<ng-container *ngFor="let sub of viewImageList.subtasks">
-    <input class="checkbox-round" type="checkbox" id="cbox2" value="second_checkbox"><label for="cbox2">{{sub}}</label><br>
-</ng-container>
+<div style="margin: 20px;">
+    <ng-container *ngIf="(viewImageList | json) != '{}'">
+        <mat-card style="width: 40%; height:40%;">
+            <mat-card-title>{{viewImageList.taskName}}</mat-card-title>
+            <mat-card-content>
+                <p style="overflow-wrap: anywhere;">{{viewImageList.description}}</p>
+                <h4>Subtasks</h4>
+                <ng-container *ngFor="let sub of viewImageList.subtasks">
+                    <input class="checkbox-round" type="checkbox" id="cbox2" value="second_checkbox"><label for="cbox2">{{sub}}</label><br>
+                </ng-container>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+</div>

@@ -26,4 +26,9 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['dashboard/view-card']);
   }
 
+  removeSelectedTask(index: number) {
+    this.taskList.splice(index, 1);
+    this.taskService.imageList.next(this.taskList);
+  }
+
 }

@@ -13,7 +13,12 @@
                         <mat-expansion-panel-header>Tasks</mat-expansion-panel-header>
                         <mat-nav-list dense>
                             <ng-container *ngFor="let tasks of taskList; let i=index">
-                            <a mat-list-item (click)="viewTask(tasks)">{{tasks.taskName}}</a>
+                                <a mat-list-item (click)="viewTask(tasks)">
+                                    {{tasks.taskName}}
+                                    <button mat-icon-button (click)="removeSelectedTask(i)">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </a>
                             </ng-container>
                         </mat-nav-list>
                     </mat-expansion-panel>
