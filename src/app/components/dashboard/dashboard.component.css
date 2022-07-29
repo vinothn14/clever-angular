@@ -1,10 +1,10 @@
 .root-element {
-    background: #a7b7d4;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #a7b7d4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mat-drawer-container{
@@ -20,62 +20,3 @@
     background-color: #f5f9fc;
     padding: 2px;
 }
-
-.drawer{
-  margin:0;
-  height:100%;
-  width: 240px;
-  padding: 20px;
-}
-
-.checkbox-round {
-  width: 1.3em;
-  height: 1.3em;
-  background-color: white;
-  border-radius: 50%;
-  vertical-align: middle;
-  border: 1px solid #ddd;
-  appearance: none;
-  -webkit-appearance: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.checkbox-round:checked {
-  background-color: blue;
-}
-  
-  input[type=checkbox]:checked + label {
-    color:black;
-    text-decoration: line-through;
-  }
-.textMatForm{
-  border-radius: 18px;
-  background-color: white;
-  resize: none;
-  outline: none;
-  padding: 20px;
-}
-
-.textArea {
-  border: none;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-
-.markdownStyle{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-}
-
-.inputTask {
-  background: transparent;
-  border: none;
-  outline: none;
-  background-color: rgba(0,0,0,0);
-  font-size: 25px;
-}
-

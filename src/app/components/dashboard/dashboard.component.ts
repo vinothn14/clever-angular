@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,41 +8,22 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  getTask = '';
-  inputText = ''
-  subtaskArr = [
-    'Keep my mentality healthy by taking walks outside',
-    'Build some new components in Figma',
-    'Figure out how to use Clever from the help center!',
-    'Create wireframes for the new dashboard'
-  ]
-
-  taskForm = this.formBuilder.group({
-    taskName: '',
-    description: '',
-    subtasks: [[]]
-  });
+  taskList: any[] = [];
 
   constructor(
-    public formBuilder: FormBuilder
+    public taskService: TaskService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.taskService.getImageList.subscribe(res => {
+      this.taskList = res;
+    });
   }
 
-  getTaskText() {
-    this.subtaskArr.push(this.getTask);
-    this.taskForm.get('subtasks')?.patchValue(this.subtaskArr);
-    this.getTask = '';
-  }
-
-  cancelTaskText() {
-    this.getTask = ''
-  }
-
-  submitForm() {
-    console.log('chk', this.taskForm.value);
-    console.log('val', this.taskForm.get('subtasks'))
+  viewTask(tasks: any) {
+    this.taskService.selectedTask.next(tasks);
+    this.router.navigate(['dashboard/view-card']);
   }
 
 }

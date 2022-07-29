@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AttachImgComponent } from './components/attach-img/attach-img.component';
 import { ImageProgressComponent } from './components/image-progress/image-progress.component';
 import { ViewCardComponent } from './components/view-card/view-card.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DndDirective } from './dnd.directive';
@@ -22,6 +23,7 @@ import { DndDirective } from './dnd.directive';
     AttachImgComponent,
     ImageProgressComponent,
     ViewCardComponent,
+    AddTaskComponent,
     DndDirective
   ],
   imports: [
