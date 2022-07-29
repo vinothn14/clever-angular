@@ -1,0 +1,43 @@
+.markdownStyle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.textArea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+
+.inputTask {
+    background: transparent;
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+    font-size: 25px;
+}
+
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+.checkbox-round:checked {
+    background-color: blue;
+}
+
+input[type=checkbox]:checked + label {
+    color:black;
+    text-decoration: line-through;
+}

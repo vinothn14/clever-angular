@@ -15,5 +15,8 @@ export class TaskService {
   imageList = new BehaviorSubject(<any>[]);
   getImageList = this.imageList.asObservable();
 
+  selectedTask = new BehaviorSubject(<any>{});
+  getSelectedTask = this.selectedTask.asObservable();
+
   constructor() { }
 }
